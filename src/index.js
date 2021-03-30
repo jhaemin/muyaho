@@ -35,13 +35,15 @@ class Muyaho {
 
       setTimeout(() => {
         img.remove()
-      }, 300);
+      }, 300)
     }, 700)
   }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  window.addEventListener('click', (e) => {
-    new Muyaho({ x: e.pageX, y: e.pageY })
+  ;['mousedown', 'touchstart'].forEach((event) => {
+    window.addEventListener(event, (e) => {
+      new Muyaho({ x: e.pageX, y: e.pageY })
+    })
   })
 })
