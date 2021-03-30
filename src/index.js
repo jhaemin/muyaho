@@ -42,6 +42,8 @@ muyahoStyle.innerHTML = /* css */ `
 document.head.appendChild(muyahoStyle)
 
 window.addEventListener('pointerdown', (e) => {
+  e.preventDefault()
+
   const img = document.createElement('img')
   img.classList.add('muyaho-img')
   img.src = muyahoImage
