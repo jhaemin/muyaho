@@ -11,18 +11,10 @@ class Muyaho {
     const audio = new Audio(muyahoAudio)
 
     const img = document.createElement('img')
+    img.classList.add('muyaho-img')
     img.src = muyahoImg
-    img.style.width = '100px'
-    img.style.height = 'auto'
-    img.style.transition = 'transform 1.5s ease-out, opacity 300ms ease'
-    img.style.position = 'fixed'
-    img.style.zIndex = '9999999999'
     img.style.left = x + 'px'
     img.style.top = y + 'px'
-    img.style.transform = 'translateX(-50%) translateY(-50%)'
-    img.style.userSelect = 'none'
-    img.style.pointerEvents = 'none'
-    img.style.willChange = 'transform'
 
     document.body.appendChild(img)
     audio.play()
@@ -41,9 +33,24 @@ class Muyaho {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  ;['mousedown', 'touchstart'].forEach((event) => {
-    window.addEventListener(event, (e) => {
-      new Muyaho({ x: e.pageX, y: e.pageY })
-    })
+  const muyahoStyle = document.createElement('style')
+  muyahoStyle.innerHTML = /* css */`
+    .muyaho-img {
+      width: 100px;
+      height: auto;
+      transition: transform 1.5s ease-out, opacity 300ms ease;
+      position: fixed;
+      z-index: 9999999999;
+      transform: translateX(-50%) translateY(-50%);
+      user-select: none;
+      pointer-events: none;
+      will-change: transform opacity;
+    }
+  `
+
+  document.head.appendChild(muyahoStyle)
+
+  window.addEventListener('pointerdown', (e) => {
+    new Muyaho({ x: e.pageX, y: e.pageY })
   })
 })
