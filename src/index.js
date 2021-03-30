@@ -3,21 +3,31 @@
  * For example, "muyaho~" means "Hello world" or "Good morning" or whatever.
  */
 
-import muyahoAudio from './muyaho.mp3'
-import muyahoImg from './muyaho.png'
+const audios = []
+const audiosCount = 10
+
+for (let i = 0; i < audiosCount; i += 1) {
+  const audio = new Audio('https://raw.githubusercontent.com/jhaemin/muyaho/main/src/muyaho.mp3')
+  audio.volume = 0
+  audio.play()
+  audios.push(audio)
+}
+
+let nextAudioIndex = 0
 
 class Muyaho {
   constructor({ x, y }) {
-    const audio = new Audio(muyahoAudio)
-
     const img = document.createElement('img')
     img.classList.add('muyaho-img')
-    img.src = muyahoImg
+    img.src = 'https://raw.githubusercontent.com/jhaemin/muyaho/main/src/muyaho.png'
     img.style.left = x + 'px'
     img.style.top = y + 'px'
 
     document.body.appendChild(img)
-    audio.play()
+    audios[nextAudioIndex].currentTime = 0
+    audios[nextAudioIndex].volume = 1
+    audios[nextAudioIndex].play()
+    nextAudioIndex = (nextAudioIndex + 1) % audiosCount
 
     img.getBoundingClientRect()
     img.style.transform = 'translateX(-50%) translateY(-50%) scale(5)'
@@ -32,9 +42,8 @@ class Muyaho {
   }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const muyahoStyle = document.createElement('style')
-  muyahoStyle.innerHTML = /* css */`
+const muyahoStyle = document.createElement('style')
+muyahoStyle.innerHTML = /* css */ `
     .muyaho-img {
       width: 100px;
       height: auto;
@@ -48,9 +57,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   `
 
-  document.head.appendChild(muyahoStyle)
+document.head.appendChild(muyahoStyle)
 
-  window.addEventListener('pointerdown', (e) => {
-    new Muyaho({ x: e.pageX, y: e.pageY })
-  })
+window.addEventListener('pointerdown', (e) => {
+  new Muyaho({ x: e.pageX, y: e.pageY })
 })
