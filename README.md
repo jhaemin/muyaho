@@ -1,7 +1,9 @@
 <h1 align="center">MUYAHO</h1>
 <p align="center">muyaho on every click with sound</p>
 
-![muyaho preview](./docs/muyaho.gif)
+<p align="center">
+  <img src="./docs/muyaho.gif" alt="muyaho preview" />
+</p>
 
 ```zsh
 > npm install muyaho
