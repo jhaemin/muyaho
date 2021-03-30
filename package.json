@@ -1,7 +1,7 @@
 {
   "name": "muyaho",
   "version": "1.0.0",
-  "description": "",
+  "description": "muyaho on every click",
   "main": "index.js",
   "scripts": {
     "dev": "parcel demo/index.html",
@@ -13,7 +13,7 @@
   "author": "jhaemin",
   "license": "MIT",
   "files": [
-    "src/index.html"
+    "build/index.js"
   ],
   "devDependencies": {
     "file-loader": "^6.2.0",
