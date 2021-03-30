@@ -5,9 +5,9 @@
   <img src="./img/muyaho.gif" alt="muyaho preview" />
 </p>
 
-<a href="https://jhaemin.github.io/muyaho">
- <h3 align="center">Live Demo</h3>
-</a>
+<h3 align="center">
+  <a href="https://jhaemin.github.io/muyaho">Live Demo</a>
+</h3>
 
 ```zsh
 > npm install muyaho
