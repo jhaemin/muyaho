@@ -2,7 +2,7 @@
 <p align="center">muyaho on every click with sound</p>
 
 <p align="center">
-  <img src="./docs/muyaho.gif" alt="muyaho preview" />
+  <img src="./img/muyaho.gif" alt="muyaho preview" />
 </p>
 
 ```zsh
