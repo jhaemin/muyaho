@@ -3,6 +3,7 @@ const config = {
   entry: __dirname + '/src/index.js',
   mode: 'production',
   output: {
+    path: __dirname + '/build',
     filename: 'index.js',
   },
   module: {
