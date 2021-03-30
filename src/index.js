@@ -32,6 +32,10 @@ class Muyaho {
 
     setTimeout(() => {
       img.style.opacity = '0'
+
+      setTimeout(() => {
+        img.remove()
+      }, 300);
     }, 700)
   }
 }

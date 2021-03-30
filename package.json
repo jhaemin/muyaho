@@ -4,7 +4,7 @@
   "description": "muyaho on every click",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel demo/index.html",
+    "dev": "parcel src/index.html",
     "build": "webpack"
   },
   "keywords": [
