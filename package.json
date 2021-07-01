@@ -2,7 +2,7 @@
   "name": "muyaho",
   "version": "1.0.0",
   "description": "muyaho on every click",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "dev": "parcel src/index.html",
     "build": "webpack"
